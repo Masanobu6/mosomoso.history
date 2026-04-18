@@ -5,8 +5,9 @@ import BaseHead from '../../../components/BaseHead.astro';
 import { getCollection } from 'astro:content';
 
 // blog コレクションから it カテゴリの記事だけ抽出
+// slug が undefined の記事は除外
 const posts = (await getCollection('blog'))
-  .filter((p) => p.slug && p.slug.startsWith('blog/it/'))
+  .filter((p) => p.slug && p.slug.includes('/it/'))
   .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
 ---
 
