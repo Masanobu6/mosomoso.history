@@ -15,7 +15,7 @@ collections_config:
     icon: wysiwyg
 
   blog:
-    path: src/content/blog
+    path: src/content/blog/**/*.md
     icon: event_available
     fields:
       - type: text
