@@ -1,0 +1,39 @@
+paths:
+  static: public
+  uploads: public/uploads
+
+timezone: Asia/Tokyo
+
+markdown:
+  engine: commonmark
+  options:
+    gfm: true
+
+collections_config:
+  pages:
+    path: src/pages
+    icon: wysiwyg
+
+  blog:
+    path: src/content/blog
+    icon: event_available
+    fields:
+      - type: text
+        name: title
+        label: Title
+
+      - type: text
+        name: description
+        label: Description
+
+      - type: date
+        name: pubDate
+        label: Publish Date
+
+      - type: list
+        name: tags
+        label: Tags
+
+      - type: image
+        name: image
+        label: Thumbnail
