@@ -20,6 +20,10 @@ const posts = (await getCollection('blog'))
   <body>
     <Header />
 
+    {(await getCollection('blog')).map(p => (
+  <pre>{JSON.stringify(p.slug, null, 2)}</pre>
+))}
+
     <main style="max-width: 900px; margin: 0 auto; padding: 2rem;">
       <h1>ITカテゴリの記事</h1>
 
