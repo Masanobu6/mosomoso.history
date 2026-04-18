@@ -4,8 +4,9 @@ import Footer from '../../../components/Footer.astro';
 import BaseHead from '../../../components/BaseHead.astro';
 import { getCollection } from 'astro:content';
 
+// blog コレクションから it カテゴリの記事だけ抽出
 const posts = (await getCollection('blog'))
-  .filter((p) => p.slug.startsWith('blog/it/'))
+  .filter((p) => p.slug && p.slug.startsWith('blog/it/'))
   .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
 ---
 
