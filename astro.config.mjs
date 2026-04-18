@@ -3,16 +3,11 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
-import { astroContent } from 'astro:content';
 
 export default defineConfig({
   site: 'https://masanobu6.github.io/mosomoso.history',
   base: '/mosomoso.history',
-  integrations: [
-    astroContent(),   // ← これが必要
-    mdx(),
-    sitemap(),
-  ],
+  integrations: [mdx(), sitemap()],
   fonts: [
     {
       provider: fontProviders.local(),
