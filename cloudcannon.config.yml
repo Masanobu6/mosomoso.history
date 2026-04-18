@@ -15,25 +15,5 @@ collections_config:
     icon: wysiwyg
 
   blog:
-    path: src/content/blog/**/*.md
+    path: src/content/blog
     icon: event_available
-    fields:
-      - type: text
-        name: title
-        label: Title
-
-      - type: text
-        name: description
-        label: Description
-
-      - type: date
-        name: pubDate
-        label: Publish Date
-
-      - type: list
-        name: tags
-        label: Tags
-
-      - type: image
-        name: image
-        label: Thumbnail
