@@ -4,9 +4,9 @@ import Footer from '../../../components/Footer.astro';
 import BaseHead from '../../../components/BaseHead.astro';
 import { getCollection } from 'astro:content';
 
-// ITカテゴリの記事だけ取得
+// slug が undefined のデータを完全に除外
 const posts = (await getCollection('blog'))
-  .filter((p) => p.slug.startsWith('it/'))
+  .filter((p) => p?.slug && p.slug.startsWith('it/'))
   .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
 ---
 
@@ -22,15 +22,19 @@ const posts = (await getCollection('blog'))
     <main style="max-width: 900px; margin: 0 auto; padding: 2rem;">
       <h1>ITカテゴリの記事</h1>
 
-      <ul>
-        {posts.map(post => (
-          <li>
-            <a href={`../${post.slug}/`}>
-              {post.data.title}
-            </a>
-          </li>
-        ))}
-      </ul>
+      {posts.length === 0 ? (
+        <p>まだ IT カテゴリの記事はありません。</p>
+      ) : (
+        <ul>
+          {posts.map(post => (
+            <li>
+              <a href={`../${post.slug}/`}>
+                {post.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </main>
 
     <Footer />
