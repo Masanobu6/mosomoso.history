@@ -1,5 +1,6 @@
 ---
 title: AWSソリューションアーキテクトアソシエイツ取得までの取組み
+image: /Blog/image/20230402_aws-saa-exam.png
 description: AWS SAA 合格までの学習内容・教材・試験対策をまとめました。
 pubDate: 2026-04-18T00:00:00Z
 tags:
