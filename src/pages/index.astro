@@ -40,7 +40,7 @@ const posts = (await getCollection('blog'))
         ">
           {posts.map(post => (
             <a
-              href={`/blog/${post.slug}/`}
+              href={`blog/${post.slug}/`}
               style="
                 display: block;
                 padding: 1rem;
@@ -67,9 +67,9 @@ const posts = (await getCollection('blog'))
       <section style="margin-top: 3rem;">
         <h2 style="font-size: 1.6rem; margin-bottom: 1rem;">カテゴリ</h2>
         <ul style="display: flex; gap: 1rem; flex-wrap: wrap; padding-left: 0;">
-          <li><a href="/blog/it/" style="text-decoration: none;">IT</a></li>
-          <li><a href="/blog/history/" style="text-decoration: none;">歴史</a></li>
-          <li><a href="/blog/資格/" style="text-decoration: none;">資格</a></li>
+          <li><a href="blog/it/" style="text-decoration: none;">IT</a></li>
+          <li><a href="blog/history/" style="text-decoration: none;">歴史</a></li>
+          <li><a href="blog/資格/" style="text-decoration: none;">資格</a></li>
         </ul>
       </section>
     </main>
