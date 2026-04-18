@@ -4,9 +4,8 @@ import Footer from '../../../components/Footer.astro';
 import BaseHead from '../../../components/BaseHead.astro';
 import { getCollection } from 'astro:content';
 
-// slug が undefined のデータを完全に除外
 const posts = (await getCollection('blog'))
-  .filter((p) => p?.slug && p.slug.startsWith('it/'))
+  .filter((p) => p.slug.startsWith('blog/it/'))
   .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
 ---
 
